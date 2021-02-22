@@ -16,7 +16,7 @@ test("render without errors", async () => {
   // assert that missions data is rendering
   // clicking the button results in an async call to an API
   // we need to WAIT for the data to come back before making assertions
-  await waitFor(() => screen.findByText(/thaicom/i));
+  await waitFor(async () => await screen.findByText(/thaicom/i));
 
   expect().toBeInTheDocument();
 });

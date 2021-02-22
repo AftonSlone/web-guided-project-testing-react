@@ -21,8 +21,10 @@ test("shows loading message when button is clicked", () => {
   expect(getDataMock.mock.calls.length).toBe(1);
   expect(getDataMock.mock.calls).toHaveLength(1);
 
-  rerender(<MissionForm getData={getDataMock} isFetchingData={true} />);
+  // rerender(<MissionForm getData={getDataMock} isFetchingData={true} />);
 
   // test that the loading message IS in the UI
-  expect(screen.getByText(/we are fetching data/i)).toBeInTheDocument();
+  const loadingMessage = screen.findByText(/we are fetching data/i);
+  console.log(loadingMessage);
+  expect().toBeInTheDocument();
 });

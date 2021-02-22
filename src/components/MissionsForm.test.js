@@ -7,7 +7,7 @@ import MissionForm from "./MissionForm";
 const getDataMock = jest.fn();
 
 test("shows loading message when button is clicked", () => {
-  render(<MissionForm getData={getDataMock} />);
+  const { rerender } = render(<MissionForm getData={getDataMock} />);
 
   // test that loading message is NOT in the UI
   expect(screen.queryByText(/we are fetching data/i)).toBeNull();
@@ -20,6 +20,8 @@ test("shows loading message when button is clicked", () => {
   expect(getDataMock.mock.calls.length === 1);
   expect(getDataMock.mock.calls.length).toBe(1);
   expect(getDataMock.mock.calls).toHaveLength(1);
+
+  rerender(<MissionForm getData={getDataMock} isFetchingData={true} />);
 
   // test that the loading message IS in the UI
   expect(screen.getByText(/we are fetching data/i)).toBeInTheDocument();

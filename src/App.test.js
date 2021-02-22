@@ -13,4 +13,5 @@ test("render without errors", () => {
   userEvent.click(screen.getByRole("button", { name: /get data/i }));
 
   // assert that missions data is rendering
+  expect(screen.getByText(/thaicom/i)).toBeInTheDocument();
 });

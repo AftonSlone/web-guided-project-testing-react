@@ -52,8 +52,8 @@ test("renders without errors", () => {
 });
 
 test("re-render properly with missions data", () => {
-  const { rerender } = render(<MissionsList missions={[]} />);
-
+  const container = render(<MissionsList missions={[]} />);
+  console.log(container);
   // first assert there are NO missions in the UI
   expect(screen.queryByText(/thaicom/i)).toBeNull();
 

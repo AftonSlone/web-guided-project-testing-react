@@ -61,4 +61,5 @@ test("re-render properly with missions data", () => {
   rerender(<MissionsList missions={missionsData} />);
 
   // assert that missions are renderd in UI
+  expect(screen.getByText(/thiacom/i)).toBeInTheDocument();
 });

@@ -18,5 +18,5 @@ test("render without errors", () => {
   // we need to WAIT for the data to come back before making assertions
   waitFor(async () => await screen.findByText(/thaicom/i));
 
-  expect().toBeInTheDocument();
+  expect(screen.findByText(/thaicom/i)).toBeInTheDocument();
 });

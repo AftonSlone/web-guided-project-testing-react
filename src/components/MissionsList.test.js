@@ -62,4 +62,5 @@ test("re-render properly with missions data", () => {
 
   // assert that missions are renderd in UI
   expect(screen.getByText(/thaicom/i)).toBeInTheDocument();
+  screen.getAllByTestId("mission");
 });

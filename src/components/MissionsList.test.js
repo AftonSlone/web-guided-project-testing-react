@@ -64,3 +64,5 @@ test("re-render properly with missions data", () => {
   expect(screen.getByText(/thaicom/i)).toBeInTheDocument();
   expect(screen.getAllByTestId("mission")).toHaveLength(3);
 });
+
+// TODO - write a test for the error state

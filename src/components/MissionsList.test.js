@@ -2,6 +2,8 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import MissionsList from "./MissionsList";
 
+const missionsData = [];
+
 test("renders without errors", () => {
   render(<MissionsList missions={[]} />);
 });
@@ -13,6 +15,7 @@ test("re-render properly with missions data", () => {
   expect(screen.queryByText(/thaicom/i)).toBeNull();
 
   // re-render comp with new props
+  rerender(<MissionsList missions={missionsData} />);
 
   // assert that missions are renderd in UI
 });

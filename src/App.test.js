@@ -3,8 +3,11 @@ import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "./App";
 import MissionsList from "./components/MissionsList";
+import { fetchMissions } from "./api/fetchMissions";
 
 // mock fetchMissions
+// const mockFetchMissions = jest.fn(); // for props functions only
+jest.mock("./api/fetchMissions");
 
 // async/await
 test("render without errors", async () => {

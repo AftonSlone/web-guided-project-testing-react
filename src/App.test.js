@@ -78,7 +78,10 @@ test("render without errors", async () => {
   mockFetchMissions.mockResolvedValueOnce(missionsData);
   render(<App />);
 
-  userEvent.click(screen.getByRole("button", { name: /get data/i }));
+  // userEvent.click(screen.getByRole("button", { name: /get data/i }));
 
   expect(await screen.findByText(/thaicom/i)).toBeInTheDocument();
+  // everything below "await" is as if it were in a .then()
 });
+
+// 'mockResolvedValueOnce'

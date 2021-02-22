@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "./App";
 import MissionsList from "./components/MissionsList";
@@ -16,6 +16,7 @@ test("render without errors", async () => {
   // assert that missions data is rendering
   // clicking the button results in an async call to an API
   // we need to WAIT for the data to come back before making assertions
+  await waitFor(() => screen.findByText(/thaicom/i));
 
-  expect(await screen.findByText(/thaicom/i)).toBeInTheDocument();
+  expect().toBeInTheDocument();
 });

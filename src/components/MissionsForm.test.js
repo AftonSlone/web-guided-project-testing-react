@@ -10,7 +10,7 @@ test("shows loading message when button is clicked", () => {
 
   // query for the get data button
 
-  // click the button
+  // click the button - userEvent.click (DID NOT LIKE IT)
 
   // test that the loading message IS in the UI
 });

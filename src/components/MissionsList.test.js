@@ -57,7 +57,7 @@ test("re-render properly with missions data", () => {
   // first assert there are NO missions in the UI
   expect(screen.queryByText(/thaicom/i)).toBeNull();
 
-  // re-render comp with new props
+  // re-render comp with new props (Get Data button pushed)
   rerender(<MissionsList missions={missionsData} />);
 
   // assert that missions are renderd in UI

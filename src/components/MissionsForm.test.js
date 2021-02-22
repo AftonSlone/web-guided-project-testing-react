@@ -4,8 +4,7 @@ import userEvent from "@testing-library/user-event";
 import MissionForm from "./MissionForm";
 
 // mock functions being passed to the comp
-const getDataMock = jest.fn(); // () => {}
-console.log(getDataMock);
+const getDataMock = jest.fn(); // () => {}, but with super powers
 
 test("shows loading message when button is clicked", () => {
   const { rerender } = render(<MissionForm getData={getDataMock} />);

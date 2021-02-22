@@ -24,7 +24,5 @@ test("shows loading message when button is clicked", () => {
   // rerender(<MissionForm getData={getDataMock} isFetchingData={true} />);
 
   // test that the loading message IS in the UI
-  const loadingMessage = screen.findByText(/we are fetching data/i);
-  console.log(loadingMessage);
-  expect().toBeInTheDocument();
+  expect(screen.findByText(/we are fetching data/i)).not.toBeNull();
 });

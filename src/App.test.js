@@ -5,7 +5,7 @@ import App from "./App";
 import MissionsList from "./components/MissionsList";
 
 // async/await
-test("render without errors", () => {
+test("render without errors", async () => {
   render(<App />);
 
   // assert there are no MissionsList
@@ -16,7 +16,7 @@ test("render without errors", () => {
   // assert that missions data is rendering
   // clicking the button results in an async call to an API
   // we need to WAIT for the data to come back before making assertions
-  waitFor(async () => await screen.findByText(/thaicom/i));
+  await waitFor(async () => await screen.findByText(/thaicom/i));
 
-  expect(screen.findByText(/thaicom/i)).toBeInTheDocument();
+  expect(screen.getByText(/thaicom/i)).toBeInTheDocument();
 });

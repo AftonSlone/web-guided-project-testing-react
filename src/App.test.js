@@ -7,11 +7,12 @@ import { fetchMissions } from "./api/fetchMissions";
 
 // mock fetchMissions
 // const mockFetchMissions = jest.fn(); // for props functions only
-jest.mock("./api/fetchMissions");
+jest.mock("./api/fetchMissions"); // () => {}
 
 // async/await
 test("render without errors", async () => {
   // mock the resolved value of fetchMissions
+  fetchMissions.mockResolvedValueOnce();
   render(<App />);
 
   // assert there are no MissionsList

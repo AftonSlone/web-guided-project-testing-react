@@ -4,8 +4,11 @@ import userEvent from "@testing-library/user-event";
 import App from "./App";
 import MissionsList from "./components/MissionsList";
 
+// mock fetchMissions
+
 // async/await
 test("render without errors", async () => {
+  // mock the resolved value of fetchMissions
   render(<App />);
 
   // assert there are no MissionsList

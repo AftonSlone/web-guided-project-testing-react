@@ -16,7 +16,11 @@ test("shows loading message when button is clicked", () => {
   // click the button - userEvent.click (DID NOT LIKE IT)
   userEvent.click(screen.getByRole("button", { name: /get data/i }));
   expect(getDataMock).toHaveBeenCalled();
-  expect(getDataMock).toHaveBeenCalledTimes(3);
+  expect(getDataMock).toHaveBeenCalledTimes(1);
+  expect(getDataMock.mock.calls.length === 1);
+  expect(getDataMock.mock.calls.length).toBe(1);
+  expect(getDataMock.mock.calls).toHaveLength(1);
 
   // test that the loading message IS in the UI
+  expect(screen.getByText(/we are fetching data/i)).toBeInTheDocument();
 });

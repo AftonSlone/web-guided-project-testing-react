@@ -69,7 +69,16 @@ test("render without errors", async () => {
   // assert that missions data is rendering
   // clicking the button results in an async call to an API
   // we need to WAIT for the data to come back before making assertions
-  // await waitFor(async () => await screen.findByText(/thaicom/i));
+  // await waitFor(async () => await screen.findByText(/thaicom/i)); // was used with the actual API call because the API call took too long for the test
+
+  expect(await screen.findByText(/thaicom/i)).toBeInTheDocument();
+});
+
+test("render without errors", async () => {
+  mockFetchMissions.mockResolvedValueOnce(missionsData);
+  render(<App />);
+
+  userEvent.click(screen.getByRole("button", { name: /get data/i }));
 
   expect(await screen.findByText(/thaicom/i)).toBeInTheDocument();
 });

@@ -13,5 +13,8 @@ test("render without errors", () => {
   userEvent.click(screen.getByRole("button", { name: /get data/i }));
 
   // assert that missions data is rendering
-  expect(screen.getByText(/thaicom/i)).toBeInTheDocument();
+  // clicking the button results in an async call to an API
+  // we need to WAIT for the data to come back before making assertions
+
+  expect(screen.findByText(/thaicom/i)).toBeInTheDocument();
 });

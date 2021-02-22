@@ -4,7 +4,8 @@ import userEvent from "@testing-library/user-event";
 import App from "./App";
 import MissionsList from "./components/MissionsList";
 
-test("render without errors", () => {
+// async/await
+test("render without errors", async () => {
   render(<App />);
 
   // assert there are no MissionsList
@@ -16,5 +17,5 @@ test("render without errors", () => {
   // clicking the button results in an async call to an API
   // we need to WAIT for the data to come back before making assertions
 
-  expect(screen.findByText(/thaicom/i)).toBeInTheDocument();
+  expect(await screen.findByText(/thaicom/i)).toBeInTheDocument();
 });

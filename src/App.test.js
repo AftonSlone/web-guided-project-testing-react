@@ -10,6 +10,7 @@ test("render without errors", () => {
   // assert there are no MissionsList
 
   // click on button
+  userEvent.click(screen.getByRole("button", { name: /get data/i }));
 
   // assert that missions data is rendering
 });
